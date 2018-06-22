@@ -18,7 +18,7 @@ services:
             args:
                 TIMEZONE: ${TIMEZONE}
         volumes:
-            - ${SYMFONY_APP_PATH}:/var/www/symfony
+            - ${APP_PATH}:/var/www/symfony
             - ./logs/symfony:/var/www/symfony/app/logs
         environment:
             # Keep attention to that env variable
