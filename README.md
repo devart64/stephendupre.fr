@@ -58,14 +58,17 @@ C'est une architecture complète à utiliser avec docker et [docker-compose (ver
         ```
     3. Mettre à jour les droits pour modifier ses fichiers depuis PhpStorm
         - Récupérer l'identifiant de son utilisateur
+        
             ```bash
             $ id -u
             ```
         - Ajouter dans le conteneur php, un utilisateur avec le même id que le sien
+        
             ```bash
             $ adduser --uid numero_recupéré_ci_dessus login_correspondant_id
             ```
         - Mettre à jour les droits sur les fichiers
+        
             ```bash
             $ chown -R login_correspondant_id:login_correspondant_id symfony
             ```
