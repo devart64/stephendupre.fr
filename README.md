@@ -1,7 +1,7 @@
 # Docker Symfony (PHP7-FPM - NGINX - MySQL - ELK)
 
 Docker-symfony4 vous donne tout ce que vous avez besoin pour développer des applications sous Symfony 4.
-C'est une architecture complète à utiliser avec docker et [docker-compose (1.7 or higher)](https://docs.docker.com/compose/).
+C'est une architecture complète à utiliser avec docker et [docker-compose (version 1.7 minimum)](https://docs.docker.com/compose/).
 
 ## Prérequis
 
@@ -15,36 +15,59 @@ C'est une architecture complète à utiliser avec docker et [docker-compose (1.7
     git clone git@framagit.org:nicolasunivlr/docker-symfony4.git
     ```
 
+3. (facultatif) Modifier le ficher .env si besoin
 
-2. Construire et exécuter les containeurs (Cela peut prendre un peu de temps la première fois)
+
+2. Construire et exécuter les conteneurs (Cela peut prendre un peu de temps la première fois)
 
     ```bash
     $ docker-compose build
     $ docker-compose up -d
     ```
 
-3. Mettre à jour votre fichier hosts
+3. Mettre à jour votre fichier hosts sur votre machine perso (pas nécessaire sur les ordinateurs de l'Université)
 
     ```bash
-    # UNIX only: get containers IP address and update host (replace IP according to your configuration) (on Windows, edit C:\Windows\System32\drivers\etc\hosts)
+    # Linux: on récupère l'adresse ip et on l'associe au nom
     $ sudo echo $(docker network inspect bridge | grep Gateway | grep -o -E '[0-9\.]+') "symfony.local" >> /etc/hosts
+    # Windows : mettre à jour le fichier C:\Windows\System32\drivers\etc\hosts
     ```
 
-    **Note:** For **OS X**, please take a look [here](https://docs.docker.com/docker-for-mac/networking/) and for **Windows** read [this](https://docs.docker.com/docker-for-windows/#/step-4-explore-the-application-and-run-examples) (4th step).
+    **Note:** Pour **OS X**, Allez voir [ici](https://docs.docker.com/docker-for-mac/networking/) et pour **Windows** lisez [ici](https://docs.docker.com/docker-for-windows/#/step-4-explore-the-application-and-run-examples) (4ème étape).
 
 4. Installer Symfony
     1. On installe les composants avec Composer
 
         ```bash
         $ docker-compose exec php bash
-        $ composer require ....
+        $ composer create-project symfony/skeleton symfony
+        $ mv symfony/* .
+        $ mv symfony/.* .
+        $ composer require annotations
+        $ composer require --dev profiler
+        $ composer require twig
+        $ composer require orm
+        $ composer require form
+        $ composer require form validator
+        $ composer require maker-bundle
         ```
-    2. Mettre à jour symfony/.env
+    2. Mettre à jour symfony/.env en modifiant DATABASE_URL comme ceci :
 
         ```yml
-        # path/to/your/symfony-project/app/config/parameters.yml
-        parameters:
-            database_host: db
+        DATABASE_URL=mysql://symfony:symfony@db:3306/symfony
+        ```
+    3. Mettre à jour les droits pour modifier ses fichiers depuis PhpStorm
+        - Récupérer l'identifiant de son utilisateur
+        ```bash
+        $ id -u
+        ```
+        - Ajouter dans le conteneur php, un utilisateur avec le même id que le sien
+        ```bash
+        $ adduser --uid numero_recupéré_ci_dessus login_correspondant_id
+        ```
+        - Mettre à jour les droits sur les fichiers
+        ```bash
+        $ chown -R login_correspondant_id:login_correspondant_id symfony
         ```
 
 5. C'est parti :-)
