@@ -37,4 +37,4 @@ RUN echo 'alias sf="php bin/console"' >> ~/.bashrc
 
 ENV COMPOSER_ALLOW_SUPERUSER 1
 
-WORKDIR /var/www/symfony
+WORKDIR /var/www/docker

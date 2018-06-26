@@ -1,4 +1,4 @@
-version: '2'
+version: '2.1'
 
 services:
     db:
@@ -18,7 +18,7 @@ services:
             args:
                 TIMEZONE: ${TIMEZONE}
         volumes:
-            - ${APP_PATH}:/var/www/symfony
+            - ${APP_PATH}:/var/www/docker
             - ./logs/symfony:/var/www/symfony/app/logs
         environment:
             # Keep attention to that env variable
@@ -31,13 +31,13 @@ services:
             - php
         volumes:
             - ./logs/nginx/:/var/log/nginx
-    elk:
-        image: willdurand/elk
-        ports:
-            - 81:80
-        volumes:
-            - ./elk/logstash:/etc/logstash
-            - ./elk/logstash/patterns:/opt/logstash/patterns
-        volumes_from:
-            - php
-            - nginx
+#    elk:
+#        image: willdurand/elk
+#        ports:
+#            - 81:80
+#        volumes:
+#            - ./elk/logstash:/etc/logstash
+#            - ./elk/logstash/patterns:/opt/logstash/patterns
+#        volumes_from:
+#            - php
+#            - nginx
