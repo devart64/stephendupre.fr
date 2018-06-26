@@ -15,7 +15,7 @@ C'est une architecture complète à utiliser avec docker et [docker-compose (ver
     git clone git@framagit.org:nicolasunivlr/docker-symfony4.git
     ```
 
-2. (facultatif) Modifier le ficher .env si besoin
+2. (facultatif) Modifier le ficher .env si besoin pour modifier les mots de passe de la base de données.
 
 
 3. Construire et exécuter les conteneurs (Cela peut prendre un peu de temps la première fois)
@@ -29,7 +29,7 @@ C'est une architecture complète à utiliser avec docker et [docker-compose (ver
 
     ```bash
     # Linux: on récupère l'adresse ip et on l'associe au nom
-    $ sudo echo $(docker network inspect bridge | grep Gateway | grep -o -E '[0-9\.]+') "symfony.local" >> /etc/hosts
+    $ sudo echo $(docker network inspect bridge | grep Gateway | grep -o -E '[0-9\.]+') "symfony.localhost" >> /etc/hosts
     # Windows : mettre à jour le fichier C:\Windows\System32\drivers\etc\hosts
     ```
 
@@ -51,12 +51,8 @@ C'est une architecture complète à utiliser avec docker et [docker-compose (ver
         $ composer require form validator
         $ composer require maker-bundle
         ```
-    2. Mettre à jour symfony/.env en modifiant DATABASE_URL comme ceci :
-
-        ```yml
-        DATABASE_URL=mysql://symfony:symfony@db:3306/symfony
-        ```
-    3. Mettre à jour les droits pour modifier ses fichiers depuis PhpStorm
+    
+    2. Mettre à jour les droits pour modifier ses fichiers depuis PhpStorm
         - Récupérer l'identifiant de son utilisateur
         
             ```bash
@@ -73,14 +69,23 @@ C'est une architecture complète à utiliser avec docker et [docker-compose (ver
             $ chown -R login_correspondant_id:login_correspondant_id symfony
             ```
 
+    3. Mettre à jour symfony/.env en modifiant DATABASE_URL comme ceci :
+
+        ```yml
+        DATABASE_URL=mysql://symfony:symfony@db:3306/symfony
+        ```
+
 6. C'est parti :-)
 
-## Utilisation
+## Démarrage
 
 Vous avez juste à exécuter `docker-compose up -d`, puis:
 
-* Application symfony [symfony.local](http://symfony.local)
+* Application symfony [symfony.localhost](http://symfony.localhost)
 * Logs (files location): logs/nginx and logs/symfony
+
+## Arrêt
+Vous avez juste à exécuter `docker-compose down`.
 
 ## Comment cela fonctionne ?
 
@@ -102,7 +107,9 @@ $ docker-compose exec php composer update
 
 # Commandes symfony
 $ docker-compose exec php bash
-$ sf doctrine:schema:update ...
+$ sf make:entity
+$ sf make:controller
+...
 
 # Supprimer tous les conteneurs 
 $ docker rm $(docker ps -aq)
@@ -112,6 +119,8 @@ $ docker rmi $(docker images -q)
 ```
 
 ## FAQ
+* Je ne comprends rien, que faire ?
+Allez voir votre prof !
 
 * Xdebug?
 Xdebug est déjà configuré
