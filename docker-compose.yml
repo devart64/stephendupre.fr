@@ -20,9 +20,6 @@ services:
         volumes:
             - ${APP_PATH}:/var/www/docker
             - ./logs/symfony:/var/www/symfony/app/logs
-        environment:
-            # Keep attention to that env variable
-            PHP_IDE_CONFIG: serverName=mysymfony
     nginx:
         build: nginx
         ports:
