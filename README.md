@@ -124,4 +124,4 @@ Allez voir votre prof !
 
 * Xdebug?
 Xdebug est déjà configuré
-Il faut configurer l'IDE en se connectant au port  `9001` avec l'id `PHPSTORM`
+Il faut configurer l'IDE en se connectant au port  `9000` avec l'id `PHPSTORM`
