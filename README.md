@@ -77,14 +77,14 @@ C'est une architecture complète à utiliser avec docker et [docker-compose (ver
 
 6. C'est parti :-)
 
-## Démarrage
+## Je commence à travailler sur le projet
 
 Vous avez juste à exécuter `docker-compose up -d`, puis:
 
 * Application symfony [symfony.localhost](http://symfony.localhost)
 * Logs (files location): logs/nginx and logs/symfony
 
-## Arrêt
+## Je finis de travailler sur le projet
 Vous avez juste à exécuter `docker-compose down`.
 
 ## Comment cela fonctionne ?
