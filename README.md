@@ -41,8 +41,6 @@ C'est une architecture complète à utiliser avec docker et [docker-compose (ver
         ```bash
         $ docker-compose exec php bash
         $ composer create-project symfony/skeleton symfony
-        $ mv symfony/* .
-        $ mv symfony/.* .
         $ composer require annotations
         $ composer require --dev profiler
         $ composer require twig

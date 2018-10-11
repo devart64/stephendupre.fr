@@ -19,8 +19,12 @@ RUN printf '[PHP]\ndate.timezone = "%s"\n', ${TIMEZONE} > /usr/local/etc/php/con
 RUN "date"
 
 # Type docker-php-ext-install to see available extensions
-RUN docker-php-ext-install pdo pdo_mysql
+RUN docker-php-ext-install pdo pdo_mysql zip
 
+RUN if [ "${http_proxy}" != "" ]; then \
+    # Needed for pecl to succeed
+    pear config-set http_proxy ${http_proxy} \
+;fi
 
 # install xdebug
 RUN pecl install xdebug
@@ -36,5 +40,6 @@ RUN echo "xdebug.remote_port=9001" >> /usr/local/etc/php/conf.d/docker-php-ext-x
 RUN echo 'alias sf="php bin/console"' >> ~/.bashrc
 
 ENV COMPOSER_ALLOW_SUPERUSER 1
+ENV http_proxy ${http_proxy}
 
 WORKDIR /var/www/docker
