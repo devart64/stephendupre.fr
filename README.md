@@ -41,13 +41,14 @@ C'est une architecture complète à utiliser avec docker et [docker-compose (ver
         ```bash
         $ docker-compose exec php bash
         $ composer create-project symfony/skeleton symfony
+        $ cd symfony
         $ composer require annotations
         $ composer require --dev profiler
         $ composer require twig
         $ composer require orm
         $ composer require form
         $ composer require form validator
-        $ composer require maker-bundle
+        $ composer require --dev maker-bundle
         ```
     
     2. Mettre à jour les droits pour modifier ses fichiers depuis PhpStorm
