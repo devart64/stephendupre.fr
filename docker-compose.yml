@@ -21,7 +21,7 @@ services:
                 https_proxy: ${PROXY}
         volumes:
             - ${APP_PATH}:/var/www/docker
-            - ./logs/symfony:/var/www/symfony/app/logs
+            - ./logs/symfony:/var/www/docker/symfony/var/logs
     nginx:
         build: 
             context: nginx
