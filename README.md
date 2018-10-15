@@ -15,7 +15,7 @@ C'est une architecture complète à utiliser avec docker et [docker-compose (ver
     git clone git@framagit.org:nicolasunivlr/docker-symfony4.git
     ```
 
-2. (facultatif) Modifier le ficher .env si besoin pour modifier les mots de passe de la base de données.
+2. (facultatif) Modifier le ficher .env si besoin pour activer et/ou modifier le proxy
 
 
 3. Construire et exécuter les conteneurs (Cela peut prendre un peu de temps la première fois)
@@ -47,7 +47,7 @@ C'est une architecture complète à utiliser avec docker et [docker-compose (ver
         $ composer require twig
         $ composer require orm
         $ composer require form
-        $ composer require form validator
+        $ composer require validator
         $ composer require --dev maker-bundle
         ```
     
