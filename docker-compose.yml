@@ -2,7 +2,7 @@ version: '2.1'
 
 services:
     db:
-        image: mysql:5
+        image: mariadb:10.1
         volumes:
             - "./.data/db:/var/lib/mysql"
         environment:
@@ -21,7 +21,7 @@ services:
                 https_proxy: ${PROXY}
         volumes:
             - ${APP_PATH}:/var/www/docker
-            - ./logs/symfony:/var/www/docker/symfony/var/logs
+#            - ./logs/symfony:/var/www/docker/symfony/var/logs
     nginx:
         build: 
             context: nginx
