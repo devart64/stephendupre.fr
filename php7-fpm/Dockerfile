@@ -45,4 +45,6 @@ RUN echo 'alias sf="php bin/console"' >> ~/.bashrc
 ENV COMPOSER_ALLOW_SUPERUSER 1
 ENV http_proxy ${http_proxy}
 
-WORKDIR /var/www/docker
+RUN composer create-project symfony/skeleton symfony
+
+WORKDIR /var/www/docker/symfony
