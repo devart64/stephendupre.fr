@@ -17,7 +17,7 @@ C'est une architecture complète à utiliser avec docker et [docker-compose (ver
 
 1. Dupliquer le projet :
     ```bash
-    git clone git@framagit.org:nicolasunivlr/docker-symfony4.git
+    git clone https://framagit.org/nicolasunivlr/docker-symfony4.git
     ```
 
 2. (facultatif) Modifier le ficher .env si besoin pour activer et/ou modifier le proxy
@@ -85,7 +85,7 @@ C'est une architecture complète à utiliser avec docker et [docker-compose (ver
 Vous avez juste à exécuter `docker-compose up -d`, puis:
 
 * Application symfony [symfony.localhost](http://symfony.localhost)
-* Logs (files location): logs/nginx and logs/symfony
+* Logs du serveur web : logs/nginx
 
 ## Je finis de travailler sur le projet
 Vous avez juste à exécuter `docker-compose down`.
@@ -94,7 +94,7 @@ Vous avez juste à exécuter `docker-compose down`.
 
 Vous pouvez aller regarder le fichier `docker-compose.yml`, avec les images `docker-compose` correspondantes:
 
-* `db`: le container mysql 5.7,
+* `db`: le container mariadb 10.1,
 * `php`: php-fpm en version 7.2,
 * `nginx`: le serveur web nginx,
 
