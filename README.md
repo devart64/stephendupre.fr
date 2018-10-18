@@ -33,9 +33,9 @@ C'est une architecture complète à utiliser avec docker et [docker-compose (ver
 4. Mettre à jour votre fichier hosts sur votre machine perso (pas nécessaire sur les ordinateurs de l'Université)
 
     ```bash
-    # Linux: on récupère l'adresse ip et on l'associe au nom
-    $ sudo echo $(docker network inspect bridge | grep Gateway | grep -o -E '[0-9\.]+') "symfony.localhost" >> /etc/hosts
-    # Windows : mettre à jour le fichier C:\Windows\System32\drivers\etc\hosts
+    # Linux: on associe l'adresses local au nom de l'application
+    $ sudo echo "127.0.0.1 symfony.localhost" >> /etc/hosts
+    # Windows : mettre à jour le fichier C:\Windows\System32\drivers\etc\hosts avec le même contenu que ci-dessus
     ```
 
     **Note:** Pour **OS X**, Allez voir [ici](https://docs.docker.com/docker-for-mac/networking/) et pour **Windows** lisez [ici](https://docs.docker.com/docker-for-windows/#/step-4-explore-the-application-and-run-examples) (4ème étape).
@@ -114,10 +114,10 @@ $ sf make:entity
 $ sf make:controller
 ...
 
-# Supprimer tous les conteneurs 
+# Supprimer tous les conteneurs (en cas de gros plantage, à utiliser en dernier recours)
 $ docker rm $(docker ps -aq)
 
-# Supprimer toutes les images
+# Supprimer toutes les images (en cas de gros plantage, à utiliser en dernier recours)
 $ docker rmi $(docker images -q)
 ```
 
@@ -127,4 +127,4 @@ Allez voir votre prof !
 
 * Xdebug?
 Xdebug est déjà configuré
-Il faut configurer l'IDE en se connectant au port  `9001` avec l'id `PHPSTORM`
+Il faut configurer Phpstorm en se connectant au port  `9001` avec l'id `PHPSTORM`. Vous pouvez suivre ce [lien](https://blog.eleven-labs.com/fr/debug-run-phpunit-tests-using-docker-remote-interpreters-with-phpstorm/). Le dépôt que vous utilisez est déjà paramétré. Utilisez docker-compose à la place de docker dans le "Remote" de l'interpréteur PHP.
