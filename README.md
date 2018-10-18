@@ -6,7 +6,7 @@ C'est une architecture complète à utiliser avec docker et [docker-compose (ver
 ## Prérequis
 
 1. Avoir [docker](https://docs.docker.com/install/) et [docker-compose](https://docs.docker.com/compose/install/#install-compose)
-
+2. Avoir Phpstorm. Votre statut d'étudiant vous donne droit à une licence gratuite de la suite.
 
 ## Installation
 
@@ -35,13 +35,11 @@ C'est une architecture complète à utiliser avec docker et [docker-compose (ver
 
     **Note:** Pour **OS X**, Allez voir [ici](https://docs.docker.com/docker-for-mac/networking/) et pour **Windows** lisez [ici](https://docs.docker.com/docker-for-windows/#/step-4-explore-the-application-and-run-examples) (4ème étape).
 
-5. Installer Symfony
-    1. On installe les composants avec Composer
+5. Installer les composants Symfony
+    1. La version minimale de symfony est déjà installée grâce à Docker. On installe les composants nécessaire à nos applications avec Composer
 
         ```bash
         $ docker-compose exec php bash
-        $ composer create-project symfony/skeleton symfony
-        $ cd symfony
         $ composer require annotations
         $ composer require --dev profiler
         $ composer require twig
@@ -49,6 +47,7 @@ C'est une architecture complète à utiliser avec docker et [docker-compose (ver
         $ composer require form
         $ composer require validator
         $ composer require --dev maker-bundle
+        $ composer require symfony/apache-pack
         ```
     
     2. Mettre à jour les droits pour modifier ses fichiers depuis PhpStorm
