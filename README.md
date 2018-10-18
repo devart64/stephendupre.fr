@@ -1,8 +1,10 @@
 # Docker Symfony (PHP7-FPM - NGINX - MariaDB)
 
 Cet environnement correspond à l'environnement de production du serveur lpmiaw.univ-lr.fr à savoir :
+
     - php 7.2
     - mariadb 10.1
+
 Docker-symfony4 vous donne tout ce que vous avez besoin pour développer des applications sous Symfony 4.
 C'est une architecture complète à utiliser avec docker et [docker-compose (version 1.7 minimum)](https://docs.docker.com/compose/).
 
