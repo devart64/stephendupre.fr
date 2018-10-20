@@ -29,7 +29,7 @@ services:
                 http_proxy: ${PROXY}
                 https_proxy: ${PROXY}                
         ports:
-            - 80:80
+            - 8000:80
         volumes_from:
             - php
         volumes:

@@ -84,7 +84,7 @@ C'est une architecture complète à utiliser avec docker et [docker-compose (ver
 
 Vous avez juste à exécuter `docker-compose up -d`, puis:
 
-* Application symfony [symfony.localhost](http://symfony.localhost)
+* Application symfony [symfony.localhost:8000](http://symfony.localhost:8000)
 * Logs du serveur web : logs/nginx
 
 ## Je finis de travailler sur le projet
