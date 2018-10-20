@@ -47,6 +47,6 @@ ENV http_proxy ${http_proxy}
 
 RUN mkdir -p /var/www/docker
 
-RUN composer create-project symfony/skeleton symfony -d /var/www/docker
+RUN composer create-project symfony/skeleton symfony -d /var/www/docker/
 
 WORKDIR /var/www/docker/symfony
