@@ -1,6 +1,7 @@
 FROM debian:jessie
 
 MAINTAINER Maxence POUTORD <maxence.poutord@gmail.com>
+ARG UID
 
 RUN apt-get update && apt-get install -y \
     nginx
@@ -13,7 +14,7 @@ RUN rm /etc/nginx/sites-enabled/default
 
 RUN echo "upstream php-upstream { server php:9000; }" > /etc/nginx/conf.d/upstream.conf
 
-RUN usermod -u 1000 www-data
+RUN usermod -u ${UID} www-data
 
 CMD ["nginx"]
 

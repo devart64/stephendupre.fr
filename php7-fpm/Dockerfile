@@ -1,4 +1,3 @@
-# See https://github.com/docker-library/php/blob/master/7.1/fpm/Dockerfile
 FROM php:7.2-fpm
 ARG TIMEZONE
 
@@ -45,8 +44,7 @@ RUN echo 'alias sf="php bin/console"' >> ~/.bashrc
 ENV COMPOSER_ALLOW_SUPERUSER 1
 ENV http_proxy ${http_proxy}
 
-RUN mkdir -p /var/www/docker
+# RUN mkdir -p /var/www/docker
+# RUN composer create-project symfony/skeleton symfony -d /var/www/docker/
 
-RUN composer create-project symfony/skeleton symfony -d /var/www/docker/
-
-WORKDIR /var/www/docker/symfony
+WORKDIR /var/www/docker/

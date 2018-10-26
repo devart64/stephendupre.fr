@@ -23,7 +23,7 @@ services:
         volumes:
             - ${APP_PATH}:/var/www/docker
 #            - ./logs/symfony:/var/www/docker/symfony/var/logs
-    nginx:
+    web:
         build: 
             context: nginx
             args:
