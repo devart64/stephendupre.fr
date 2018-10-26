@@ -13,6 +13,15 @@ C'est une architecture complète à utiliser avec docker et [docker-compose (ver
 1. Avoir [docker](https://docs.docker.com/install/) et [docker-compose](https://docs.docker.com/compose/install/#install-compose)
 2. Avoir Phpstorm. Votre statut d'étudiant vous donne droit à une licence gratuite de la suite.
 
+## Spécificité des salles MSI 201/202
+
+1. Vous êtes administrateur de votre machine
+2. Vous ne pouvez rien stocker sur ces machines car elles sont réinitialisées fréquemment.
+3. Il faut refaire certaines manipulations à chaque début de TP :
+    - git config...
+    - ajout des clés ssh
+    - ...
+
 ## Installation
 
 1. Dupliquer le projet :
@@ -71,7 +80,7 @@ C'est une architecture complète à utiliser avec docker et [docker-compose (ver
         - Mettre à jour les droits sur les fichiers
         
             ```bash
-            $ chown -R login_correspondant_id:login_correspondant_id symfony
+            $ chown -R login_correspondant_id:www-data symfony
             ```
 
     3. Mettre à jour symfony/.env en modifiant DATABASE_URL comme ceci :
@@ -112,6 +121,7 @@ $ docker-compose exec php composer update
 
 # Commandes symfony
 $ docker-compose exec php bash
+$ cd symfony
 $ sf make:entity
 $ sf make:controller
 ...
