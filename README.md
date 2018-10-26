@@ -40,13 +40,15 @@ C'est une architecture complète à utiliser avec docker et [docker-compose (ver
 
     **Note:** Pour **OS X**, Allez voir [ici](https://docs.docker.com/docker-for-mac/networking/) et pour **Windows** lisez [ici](https://docs.docker.com/docker-for-windows/#/step-4-explore-the-application-and-run-examples) (4ème étape).
 
-5. Installer les composants Symfony
-    1. La version minimale de symfony est déjà installée grâce à Docker. On installe les composants nécessaire à nos applications avec Composer
+5. Installer Symfony
+    1. On installe symfony en version minimale avec Composer. On installe les composants nécessaires à nos applications également avec Composer
 
         ```bash
         $ docker-compose exec php bash
-        $ composer require annotations
+        $ composer create-project symfony/skeleton symfony
+        $ cd symfony
         $ composer require --dev profiler
+        $ composer require annotations
         $ composer require twig
         $ composer require orm
         $ composer require form
