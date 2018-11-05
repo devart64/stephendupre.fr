@@ -28,7 +28,8 @@ services:
             context: nginx
             args:
                 http_proxy: ${PROXY}
-                https_proxy: ${PROXY}                
+                https_proxy: ${PROXY}
+                UID: ${UID}
         ports:
             - 8000:80
         volumes_from:

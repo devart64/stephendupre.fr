@@ -27,9 +27,13 @@ C'est une architecture complète à utiliser avec docker et [docker-compose (ver
 1. Dupliquer le projet :
     ```bash
     git clone https://framagit.org/nicolasunivlr/docker-symfony4.git
+    # renommer le dossier
+    mv docker-symfony4 mon_projet (tp1Symfony pour la première fois)
+    # on se place dans la bon dossier
+    cd mon_projet
     ```
 
-2. (facultatif) Modifier le ficher .env si besoin pour activer et/ou modifier le proxy
+2. (**facultatif** sur votre ordinateur personnel, **obligatoire** sur un poste de l'Université) Modifier le ficher .env si besoin pour activer et/ou modifier le proxy
 
 
 3. Construire et exécuter les conteneurs (Cela peut prendre un peu de temps la première fois)
@@ -57,17 +61,13 @@ C'est une architecture complète à utiliser avec docker et [docker-compose (ver
         $ composer create-project symfony/skeleton symfony
         $ cd symfony
         $ composer require --dev profiler
-        $ composer require annotations
-        $ composer require twig
-        $ composer require orm
-        $ composer require form
-        $ composer require validator
+        $ composer require annotations twig orm form validator
         $ composer require --dev maker-bundle
         $ composer require symfony/apache-pack
         ```
     
     2. Mettre à jour les droits pour modifier ses fichiers depuis PhpStorm
-        - Récupérer l'identifiant de son utilisateur
+        - Récupérer l'identifiant de son utilisateur depuis son poste (normalement 1000)
         
             ```bash
             $ id -u
@@ -80,10 +80,11 @@ C'est une architecture complète à utiliser avec docker et [docker-compose (ver
         - Mettre à jour les droits sur les fichiers
         
             ```bash
+            cd ..
             $ chown -R login_correspondant_id:www-data symfony
             ```
 
-    3. Mettre à jour symfony/.env en modifiant DATABASE_URL comme ceci :
+    3. Depuis phpStorm, mettre à jour symfony/.env en modifiant DATABASE_URL comme ceci :
 
         ```yml
         DATABASE_URL=mysql://symfony:symfony@db:3306/symfony
