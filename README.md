@@ -84,11 +84,12 @@ C'est une architecture complète à utiliser avec docker et [docker-compose (ver
             $ chown -R login_correspondant_id:www-data symfony
             ```
 
-    3. Depuis phpStorm, mettre à jour symfony/.env en modifiant DATABASE_URL comme ceci :
+    3. Ouvrir le projet dans phpStorm, et mettre à jour symfony/.env en modifiant DATABASE_URL comme ceci :
 
         ```yml
         DATABASE_URL=mysql://symfony:symfony@db:3306/symfony
         ```
+    4. En profiter pour installer les plugins symfony et .env pour profiter pleinement de votre IDE.
 
 6. C'est parti :-)
 
