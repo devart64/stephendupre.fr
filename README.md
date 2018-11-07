@@ -33,7 +33,7 @@ C'est une architecture complète à utiliser avec docker et [docker-compose (ver
     cd mon_projet
     ```
 
-2. (**facultatif** sur votre ordinateur personnel, **obligatoire** sur un poste de l'Université) Modifier le ficher .env si besoin pour activer et/ou modifier le proxy
+2. (**facultatif** sur votre ordinateur personnel, **obligatoire** sur un poste de l'Université) Modifier le ficher .env pour activer et/ou modifier le proxy
 
 
 3. Construire et exécuter les conteneurs (Cela peut prendre un peu de temps la première fois)
