@@ -43,15 +43,13 @@ C'est une architecture complète à utiliser avec docker et [docker-compose (ver
     $ docker-compose up -d
     ```
 
-4. Mettre à jour votre fichier hosts sur votre machine perso (pas nécessaire sur les ordinateurs de l'Université)
+4. Mettre à jour votre fichier hosts sur votre machine perso
 
     ```bash
     # Linux: on associe l'adresses local au nom de l'application
-    $ sudo echo "127.0.0.1 symfony.localhost" >> /etc/hosts
-    # Windows : mettre à jour le fichier C:\Windows\System32\drivers\etc\hosts avec le même contenu que ci-dessus
+    $ sudo sh -c 'echo "127.0.0.1 symfony.localhost" >> /etc/hosts'
+    # Windows : mettre à jour le fichier C:\Windows\System32\drivers\etc\hosts en ajoutant au fichier 127.0.0.1 symfony.localhost
     ```
-
-    **Note:** Pour **OS X**, Allez voir [ici](https://docs.docker.com/docker-for-mac/networking/) et pour **Windows** lisez [ici](https://docs.docker.com/docker-for-windows/#/step-4-explore-the-application-and-run-examples) (4ème étape).
 
 5. Installer Symfony
     1. On installe symfony en version minimale avec Composer. On installe les composants nécessaires à nos applications également avec Composer
@@ -109,7 +107,7 @@ Vous pouvez aller regarder le fichier `docker-compose.yml`, avec les images `doc
 
 * `db`: le container mariadb 10.1,
 * `php`: php-fpm en version 7.2,
-* `nginx`: le serveur web nginx,
+* `web`: le serveur web nginx,
 
 ## Commandes utiles
 
