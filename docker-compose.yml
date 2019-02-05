@@ -20,6 +20,8 @@ services:
                 TIMEZONE: ${TIMEZONE}
                 http_proxy: ${PROXY}
                 https_proxy: ${PROXY}
+                UID: ${UID}
+        user: ${UID}
         volumes:
             - ${APP_PATH}:/var/www/docker
 #            - ./logs/symfony:/var/www/docker/symfony/var/logs
