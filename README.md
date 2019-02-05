@@ -58,36 +58,17 @@ C'est une architecture complète à utiliser avec docker et [docker-compose (ver
         $ docker-compose exec php bash
         $ composer create-project symfony/skeleton symfony
         $ cd symfony
-        $ composer require --dev profiler
+        $ composer require --dev profiler maker
         $ composer require annotations twig orm form validator
-        $ composer require --dev maker-bundle
         $ composer require symfony/apache-pack
         ```
     
-    2. Mettre à jour les droits pour modifier ses fichiers depuis PhpStorm
-        - Récupérer l'identifiant de son utilisateur depuis son poste (normalement 1000)
-        
-            ```bash
-            $ id -u
-            ```
-        - Ajouter dans le conteneur php, un utilisateur avec le même id que le sien
-        
-            ```bash
-            $ adduser --uid numero_recupéré_ci_dessus login_correspondant_id
-            ```
-        - Mettre à jour les droits sur les fichiers
-        
-            ```bash
-            cd ..
-            $ chown -R login_correspondant_id:www-data symfony
-            ```
-
-    3. Ouvrir le projet dans phpStorm, et créer **symfony/.env.local** en ajoutant la ligne DATABASE_URL comme ceci :
+    2. Ouvrir le projet dans phpStorm, et créer **symfony/.env.local** en ajoutant la ligne DATABASE_URL comme ceci :
 
         ```yml
         DATABASE_URL=mysql://symfony:symfony@db:3306/symfony
         ```
-    4. En profiter pour installer dans Phpstorm les plugins symfony et .env pour profiter pleinement de votre IDE.
+    3. En profiter pour installer dans Phpstorm les plugins symfony et .env pour profiter pleinement de votre IDE.
 
 6. C'est parti :-)
 
