@@ -64,6 +64,6 @@ ENV http_proxy ${http_proxy}
 WORKDIR /var/www/docker/
 
 #RUN mkdir -p /var/www/docker
-RUN composer create-project symfony/skeleton symfony -d /var/www/docker
-RUN chown -R monuser:www-data /var/www/docker/symfony
+#RUN composer create-project symfony/skeleton symfony -d /var/www/docker
+#RUN chown -R monuser:www-data /var/www/docker/symfony
 
