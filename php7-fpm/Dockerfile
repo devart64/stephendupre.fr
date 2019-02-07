@@ -61,7 +61,9 @@ RUN echo 'alias sf="php bin/console"' >> /home/monuser/.bashrc
 ENV COMPOSER_ALLOW_SUPERUSER 1
 ENV http_proxy ${http_proxy}
 
-#RUN mkdir -p /var/www/docker
-#RUN composer create-project symfony/skeleton symfony -d /usr/local/
-
 WORKDIR /var/www/docker/
+
+#RUN mkdir -p /var/www/docker
+RUN composer create-project symfony/skeleton symfony -d /var/www/docker
+RUN chown -R monuser:www-data /var/www/docker/symfony
+
