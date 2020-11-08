@@ -2,50 +2,74 @@
 
 {% block body %}
 	<div class="row">
-		<div id="blog-app"></div>
+		<div class="col-md-12" id="blog-app"></div>
 	</div>
 	
-	
-	
+	<div class="jumbotron p-4 p-md-5 text-white rounded bg-dark">
+		<div class="col-md-6 px-0">
+			<h1 class="display-4 font-italic">Title of a longer featured blog post</h1>
+			<p class="lead my-3">Multiple lines of text that form the lede, informing new readers quickly and efficiently about what’s most interesting in this post’s contents.</p>
+			<p class="lead mb-0"><a href="#" class="text-white font-weight-bold">Continue reading...</a></p>
+		</div>
+	</div>
+	<div class="row mb-2">
 	{% for post in posts %}
-		<h2>{{ post.title }}</h2>
-		<small>{{ post.publishedAt | date('d/m/Y') }}</small>
-		<p>{{ post.content }}</p>
-		<small>{{ post.comments | length }} commentaire(s)</small>
-		<a href="{{ path('blog_read', { id: post.id}) }}">Lire la suite</a>
-		<hr >
+		<div class="col-md-6">
+			<div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+				<div class="col p-4 d-flex flex-column position-static">
+					<strong class="d-inline-block mb-2 text-primary">World</strong>
+					<h3 class="mb-0">{{ post.title }}</h3>
+					<div class="mb-1 text-muted">{{ post.publishedAt | date('d/m/Y') }}</div>
+					<p class="card-text mb-auto">{{ post.content }}</p>
+					<p class="card-text mb-auto"><small>{{ post.comments | length }} commentaire(s)</small></p>
+					<a class="stretched-link" href="{{ path('blog_read', { id: post.id}) }}">Lire la suite</a>
+				</div>
+				<div class="col-auto d-none d-lg-block">
+					<svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+				</div>
+			</div>
+		</div>
 	{% endfor %}
-	<ul>
-		{% if page > 1 %}
-			<li>
-				<a href="{{ path('index', { page : 1 }) }}">Première page</a>
-			</li>
-		{% endif %}
-		{% if page > 1 %}
-			<li>
-				<a href="{{ path('index', { page : page - 1 }) }}">Précédent</a>
-			</li>
-		{% endif %}
-	{% for p in range %}
-		<li>
-			<a class="{{ page == p ? "pageActuelle" }}" href="{{ path('index', { page : p }) }}">{{ p }}</a>
-		</li>
-	{% endfor %}
-		{% if page < pages %}
-			<li>
-				<a href="{{ path('index', { page : page + 1 }) }}">Suivant</a>
-			</li>
-		{% endif %}
-		
-		{% if page < pages %}
-			<li>
-				<a href="{{ path('index', { page : pages }) }}">Dernière page</a>
-			</li>
-		{% endif %}
-	</ul>
+	</div>
+	<nav aria-label="Page navigation example">
+		<ul class="pagination justify-content-center">
+			{% if page > 1 %}
+				<li class="page-item">
+					<a class="page-link" href="{{ path('index', { page : 1 }) }}" tabindex="-1" aria-disabled="true">Première page</a>
+				</li>
+			{% endif %}
+			{% if page > 1 %}
+				<li class="page-item">
+					<a class="page-link" href="{{ path('index', { page : page - 1 }) }}" tabindex="-1" aria-disabled="true">Précédent</a>
+				</li>
+				
+			{% endif %}
+			{% for p in range %}
+				<li class="page-item {{ page == p ? "active" }}">
+					<a class="page-link" href="{{ path('index', { page : p }) }}">{{ p }}</a>
+				</li>
+			{% endfor %}
+			{% if page < pages %}
+				<li class="page-item">
+					<a class="page-link" href="{{ path('index', { page : page + 1 }) }}" tabindex="-1" aria-disabled="true">Suivant</a>
+				</li>
+			{% endif %}
+			
+			{% if page < pages %}
+				<li class="page-item">
+					<a class="page-link" href="{{ path('index', { page : pages }) }}" tabindex="-1" aria-disabled="true">Dernière page</a>
+				</li>
+			{% endif %}
+		</ul>
+	</nav>
+	
+	
+	
+	
 {% endblock %}
 {% block javascripts %}
 	{{ parent() }}
 	
 	{{ encore_entry_script_tags('testReact') }}
 {% endblock %}
+

@@ -2,3 +2,18 @@
     pointer-events: none;
     color: #718C00;
 }
+body{margin-top:20px;}
+
+
+
+.comment-wrapper .media-list .media img {
+    width:64px;
+    height:64px;
+    border:2px solid #e5e7e8;
+    margin-right: 20px;
+}
+
+.comment-wrapper .media-list .media {
+    border-bottom:1px dashed #efefef;
+    margin-bottom:25px;
+}

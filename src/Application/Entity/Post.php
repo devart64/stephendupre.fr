@@ -35,6 +35,12 @@ class Post
     private $publishedAt;
 
     /**
+     * @var string
+     * @ORM\Column(type="string")
+     */
+    private $author;
+
+    /**
      * @var string $content
      * @ORM\Column(type="text")
      */
@@ -116,6 +122,26 @@ class Post
     {
         return $this->comments;
     }
+
+    /**
+     * @return string
+     */
+    public function getAuthor(): string
+    {
+        return $this->author;
+    }
+
+    /**
+     * @param string $author
+     * @return Post
+     */
+    public function setAuthor(string $author): Post
+    {
+        $this->author = $author;
+        return $this;
+    }
+
+
 
 
 

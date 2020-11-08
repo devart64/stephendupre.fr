@@ -1,20 +1,101 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-<h3><a href="">{{ post.title }}</a></h3>
-<p>{{ post.content }}</p>
-	<hr>
-	{{ form_start(form) }}
-		{{ form_row(form.author) }}
-		{{ form_row(form.content) }}
-	<button type="submit">Envoyer</button>
-	{{ form_end(form) }}
-	<ul>
-		{% for comment in post.comments %}
-			<li>
-				<b>{{ comment.author }}</b><em> le {{ comment.postedAt | date ('d/m/Y') }}</em>
-				<p>{{ comment.content }}</p>
-			</li>
-		{% endfor %}
-	</ul>
+	<main role="main" class="container mt-5" >
+		<div class="row" >
+			<div class="col-md-8 blog-main" >
+				
+				<div class="blog-post" >
+					<h2 class="blog-post-title" >{{ post.title }}</h2 >
+					<p class="blog-post-meta" >{{ post.publishedAt | date('d/m/Y') }} par
+						<a href="#" >{{ post.author }}</a ></p >
+					
+					<p >{{ post.content }}</p >
+				
+				</div ><!-- /.blog-post -->
+				
+				
+				<div class="container card p-1 mt-5" >
+					<div class="row d-flex justify-content-center" >
+						<div class="col-md-12" >
+							<div class="headings d-flex justify-content-between align-items-center mb-3" >
+								<h5 >Commentaires non lus({{ post.comments | length }})</h5 >
+							</div >
+						<div class="card-header" >
+							{{ form_start(form) }}
+							{{ form_row(form.author) }}
+							{{ form_row(form.content) }}
+							<button class="btn btn-outline-primary mt-1" type="submit" >Envoyer</button >
+							{{ form_end(form) }}
+						</div >
+							<div class="card-body">
+						{% for comment in post.comments %}
+							<div class="card p-3 mt-2" >
+								<div class="d-flex justify-content-between align-items-center" >
+									<div class="user d-flex flex-row align-items-center" >
+										<img src="https://i.imgur.com/hczKIze.jpg" width="30" class="user-img rounded-circle mr-2" >
+										<span ><small class="font-weight-bold text-primary" >{{ comment.author }}</small > <small class="font-weight-bold" >{{ comment.content }}</small ></span >
+									</div >
+									<small >{{ comment.postedAt | date ('d/m/Y') }}</small >
+								</div >
+								<div class="action d-flex justify-content-between mt-2 align-items-center" >
+									<div class="reply px-4" ><small >Supprimer</small > <span class="dots" ></span >
+										<small >Répondre</small > <span class="dots" ></span ></div >
+									<div class="icons align-items-center" ><i class="fa fa-star text-warning" ></i >
+										<i class="fa fa-check-circle-o check-icon" ></i ></div >
+								</div >
+							</div >
+						
+						{% endfor %}
+							</div>
+					</div >
+				</div >
+			</div >
+			
+			
+			<nav class="blog-pagination mt-2" >
+				<a class="btn btn-outline-primary" href="#" >Older</a >
+				<a class="btn btn-outline-secondary disabled" href="#" tabindex="-1" aria-disabled="true" >Newer</a >
+			</nav >
+		
+		</div ><!-- /.blog-main -->
+		
+		<aside class="col-md-4 blog-sidebar" >
+			<div class="p-4 mb-3 bg-light rounded" >
+				<h4 class="font-italic" >About</h4 >
+				<p class="mb-0" >Etiam porta <em >sem malesuada magna</em > mollis euismod. Cras mattis consectetur
+					purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p >
+			</div >
+			
+			<div class="p-4" >
+				<h4 class="font-italic" >Archives</h4 >
+				<ol class="list-unstyled mb-0" >
+					<li ><a href="#" >March 2014</a ></li >
+					<li ><a href="#" >February 2014</a ></li >
+					<li ><a href="#" >January 2014</a ></li >
+					<li ><a href="#" >December 2013</a ></li >
+					<li ><a href="#" >November 2013</a ></li >
+					<li ><a href="#" >October 2013</a ></li >
+					<li ><a href="#" >September 2013</a ></li >
+					<li ><a href="#" >August 2013</a ></li >
+					<li ><a href="#" >July 2013</a ></li >
+					<li ><a href="#" >June 2013</a ></li >
+					<li ><a href="#" >May 2013</a ></li >
+					<li ><a href="#" >April 2013</a ></li >
+				</ol >
+			</div >
+			
+			<div class="p-4" >
+				<h4 class="font-italic" >Suivez moi...</h4 >
+				<ol class="list-unstyled" >
+					<li ><a href="https://github.com/devart64" >GitHub</a ></li >
+					<li ><a href="https://twitter.com/DuprStephen2" >Twitter</a ></li >
+				</ol >
+			</div >
+		</aside ><!-- /.blog-sidebar -->
+		
+		</div ><!-- /.row -->
+	
+	</main >
+
 {% endblock %}
