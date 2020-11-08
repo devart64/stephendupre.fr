@@ -3,6 +3,7 @@
 
 namespace App\DataFixtures;
 
+use App\Application\Entity\Comment;
 use App\Application\Entity\Post;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
@@ -19,11 +20,19 @@ class PostFixtures extends Fixture
      */
     public function load(ObjectManager $manager)
     {
-        for ($i = 1; $i <= 50; $i++){
+        for ($i = 1; $i <= 100; $i++){
             $post = new Post();
             $post->setTitle('Article n°'.$i);
             $post->setContent('Contenu n°'.$i);
             $manager->persist($post);
+
+            for ($j = 1; $j <= rand(2, 15); $j++) {
+                $comment = new Comment();
+                $comment->setAuthor('Auteur '.$i);
+                $comment->setContent('Commentaire n°'.$j);
+                $comment->setPost($post);
+                $manager->persist($comment);
+            }
         }
         $manager->flush();
     }
