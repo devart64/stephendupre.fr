@@ -2,24 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9eb4be1e-278e-4e6e-b603-ce93ea8cd3ab" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/assets/images/bg01.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/bg02.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/bg03.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/icons/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/icons/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/icons/video-16-9.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/js/commingSoon/commingSoon.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/styles/commingSoon/main.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/styles/commingSoon/util.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/CommingSoonController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/commingsoon.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/bg04.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/stephendupre.fr.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/stephendupre.fr.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/routes.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/BlogController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/BlogController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/commingsoon.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/commingsoon.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -145,6 +136,7 @@
       <path value="$PROJECT_DIR$/vendor/doctrine/doctrine-fixtures-bundle" />
       <path value="$PROJECT_DIR$/vendor/symfony/apache-pack" />
       <path value="$PROJECT_DIR$/vendor/symfony/webpack-encore-bundle" />
+      <path value="$PROJECT_DIR$/vendor/symfony/google-mailer" />
     </include_path>
   </component>
   <component name="ProjectId" id="1jxpN5Jd7z2qOFWKuaxvL3GKqZe" />
@@ -194,7 +186,7 @@
       <option name="presentableId" value="Default" />
       <updated>1604755553837</updated>
       <workItem from="1604755554894" duration="9638000" />
-      <workItem from="1604820253856" duration="27067000" />
+      <workItem from="1604820253856" duration="31739000" />
     </task>
     <servers />
   </component>
