@@ -1,3 +1,7 @@
 blog:
-    path: /
+    path: /blog
     controller: App\Controller\BlogController::index
+
+comming_soon:
+    path: /
+    controller: App\Controller\ComminSoonController:index

@@ -1,5 +1,4 @@
 var Encore = require('@symfony/webpack-encore');
-
 // Manually configure the runtime environment if not already configured yet by the "encore" command.
 // It's useful when you use tools that rely on webpack.config.js file.
 if (!Encore.isRuntimeEnvironmentConfigured()) {
@@ -13,7 +12,19 @@ Encore
     .setPublicPath('/build')
     // only needed for CDN's or sub-directory deploy
     //.setManifestKeyPrefix('build/')
+    .copyFiles({
+         from: './assets/images',
+         to: 'images/[path][name].[ext]',
+         pattern: /\.(png|jpg|jpeg)$/
+      // optional target path, relative to the output dir
+       //
 
+        // if versioning is enabled, add the file hash too
+      //to: 'images/[path][name].[hash:8].[ext]',
+
+       // only copy files matching this pattern
+     //
+    })
     /*
      * ENTRY CONFIG
      *
@@ -24,6 +35,7 @@ Encore
      * and one CSS file (e.g. app.css) if your JavaScript imports CSS.
      */
     .addEntry('app', './assets/js/app.js')
+    .addEntry('commingSoon', './assets/js/commingSoon/commingSoon.js')
     .addEntry('testReact', './assets/js/testReact.js')
     //.addEntry('page1', './assets/page1.js')
     //.addEntry('page2', './assets/page2.js')

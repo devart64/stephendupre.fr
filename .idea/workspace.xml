@@ -2,17 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9eb4be1e-278e-4e6e-b603-ce93ea8cd3ab" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/assets/images/bg01.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/bg02.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/bg03.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/icons/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/icons/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/icons/video-16-9.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/js/commingSoon/commingSoon.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/styles/commingSoon/main.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/styles/commingSoon/util.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/CommingSoonController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/commingsoon.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/styles/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styles/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/styles/blog/css/blog.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styles/blog/css/blog.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/routes.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Application/Entity/Post.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Application/Entity/Post.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DataFixtures/PostFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/PostFixtures.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/CommentType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/CommentType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/read.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/read.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/BlogController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/BlogController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -150,6 +157,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.jetbrains.php.lang.actions.generation.PhpGenerateFieldAccessorHandlerBase$MyMemberChooser.fluent.setters.last.selected" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/assets/images" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -161,16 +169,20 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="php.override.implement.member.chooser.php.doc" value="DEFAULT" />
-    <property name="settings.editor.selected.configurable" value="settings.javascript.linters.eslint" />
+    <property name="settings.editor.selected.configurable" value="fr.adrienbrault.idea.symfony2plugin.ui.TwigSettingsForm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\stephendupre.fr\assets\images" />
+      <recent name="C:\wamp64\www\stephendupre.fr\assets\styles\commingSoon" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\wamp64\www\stephendupre.fr\assets\js" />
       <recent name="C:\wamp64\www\stephendupre.fr\assets" />
       <recent name="C:\wamp64\www\stephendupre.fr\assets\styles" />
+      <recent name="C:\wamp64\www\stephendupre.fr\assets\js\commingSoon" />
+      <recent name="C:\wamp64\www\stephendupre.fr\assets\js" />
       <recent name="C:\wamp64\www\stephendupre.fr\src\Application\Repository" />
-      <recent name="C:\wamp64\www\stephendupre.fr\src\Application\Entity" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -182,7 +194,7 @@
       <option name="presentableId" value="Default" />
       <updated>1604755553837</updated>
       <workItem from="1604755554894" duration="9638000" />
-      <workItem from="1604820253856" duration="21397000" />
+      <workItem from="1604820253856" duration="27067000" />
     </task>
     <servers />
   </component>
@@ -206,17 +218,21 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604767571793" />
-    <state x="709" y="228" key="NewPhpClassDialog" timestamp="1604767498318">
+    <state x="709" y="228" key="NewPhpClassDialog" timestamp="1604845172821">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="709" y="228" key="NewPhpClassDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604767498318" />
-    <state x="461" y="164" key="SettingsEditor" timestamp="1604832500008">
+    <state x="709" y="228" key="NewPhpClassDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604845172821" />
+    <state x="461" y="164" key="SettingsEditor" timestamp="1604846459393">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="461" y="164" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604832500008" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1604823125227">
+    <state x="461" y="164" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604846459393" />
+    <state x="616" y="240" key="run.anything.popup" timestamp="1604849158504">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604823125227" />
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604849158504" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1604849162677">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604849162677" />
   </component>
 </project>

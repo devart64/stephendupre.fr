@@ -9,6 +9,7 @@
 import '../styles/app.css';
 import '../styles/blog/css/blog.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'popper.js/dist/popper';
 // Need jQuery? Install it with "yarn add jquery", then uncomment to import it.
 
 import $ from 'jquery';
