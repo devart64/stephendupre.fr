@@ -23,7 +23,8 @@ Encore
      * Each entry will result in one JavaScript file (e.g. app.js)
      * and one CSS file (e.g. app.css) if your JavaScript imports CSS.
      */
-    .addEntry('app', './assets/app.js')
+    .addEntry('app', './assets/js/app.js')
+    .addEntry('testReact', './assets/js/testReact.js')
     //.addEntry('page1', './assets/page1.js')
     //.addEntry('page2', './assets/page2.js')
 
@@ -34,7 +35,6 @@ Encore
     // but, you probably want this, unless you're building a single-page app
     .enableSingleRuntimeChunk()
 
-    .enableReactPreset()
 
     /*
      * FEATURE CONFIG
@@ -71,6 +71,8 @@ Encore
     // uncomment if you use API Platform Admin (composer req api-admin)
     //.enableReactPreset()
     //.addEntry('admin', './assets/admin.js')
+    .enableReactPreset()
+
 ;
 
 module.exports = Encore.getWebpackConfig();
